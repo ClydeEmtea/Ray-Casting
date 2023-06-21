@@ -9,7 +9,7 @@ public class App extends JPanel implements ActionListener, Constants {
         this.setPreferredSize(new Dimension(Constants.WIDTH, Constants.HEIGHT));
         this.setBackground(Color.BLACK);
         this.setFocusable(true);
-        this.addKeyListener(mkl = new MyKeyListener(this));
+        this.addKeyListener(mkl = new MyKeyListener());
         start();
     }
     MyKeyListener mkl;
