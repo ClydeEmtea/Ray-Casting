@@ -6,7 +6,7 @@ public interface Constants {
     int HEIGHT = 500;
     int SIZE = 50;
     int DELAY = 20;
-    int NUM_RAYS = 111;
+    int NUM_RAYS = 1000;
     Color red = new Color(255, 0, 0);
     Color yellow = new Color(255, 255, 0);
     Color grey = new Color(128, 128, 128);
