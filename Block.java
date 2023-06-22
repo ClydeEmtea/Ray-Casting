@@ -1,19 +1,31 @@
 import java.awt.*;
 
 public class Block implements Constants {
-    private int x;
-    private int y;
+    // x and y are the coordinates of the top left corner of the block
+    public final int x;
+    public final int y;
+    public Color color = grey;
 
-    public Block(int x, int y) {
+    public Block(int x, int y) { // Constructor
         this.x = x * SIZE;
         this.y = y * SIZE;
     }
 
+    // Draw the block
     public void draw(Graphics g) {
+        g.setColor(this.color);
         g.fillRect(this.x, this.y, SIZE, SIZE);
+        this.setColor(grey);
     }
 
-    public boolean isColliding(float x, float y) {
-        return (x >= this.x && x <= this.x + SIZE && y >= this.y && y <= this.y + SIZE);
+    // Check if the player is colliding with the block
+    public boolean isColliding(float x, float y, int radius) {
+        return (this.x <= x + radius * 2 && x <= (this.x + SIZE) &&
+                this.y <= y + radius * 2 && y <= (this.y + SIZE));
+    }
+
+    // Getters and setters
+    public void setColor(Color color) {
+        this.color = color;
     }
 }
